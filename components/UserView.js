@@ -6,12 +6,13 @@ export default class UserView extends Component {
     super(props);
     this.state = {
       user: {
-        name: "",
-        email: "",
-        phone: "",
+        name: this.props.user.name,
+        email: this.props.user.email,
+        phone: this.props.user.phone,
       },
     };
   }
+
   componentDidUpdate(prevProps) {
     if (prevProps.user.name != this.props.user.name) {
       this.fetchUserWithId(this.props.user.id);
@@ -36,6 +37,16 @@ export default class UserView extends Component {
   render() {
     return (
       <>
+        <Text
+          style={{
+            fontWeight: "bold",
+            fontSize: 18,
+            marginBottom: 10,
+            marginTop: 5,
+          }}
+        >
+          Candidate Info
+        </Text>
         <Text>{this.state.user.name}</Text>
         <Text>{this.state.user.email}</Text>
         <Text>{this.state.user.phone}</Text>

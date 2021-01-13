@@ -74,7 +74,7 @@ export default class ClassComponentLab extends Component {
         </View>
         <View style={styles.buttonContainer}>
           <Button
-            title="prev"
+            title="Prev"
             onPress={() => {
               this.state.selectedUser > 0
                 ? this.setState({ selectedUser: this.state.selectedUser - 1 })
@@ -83,7 +83,7 @@ export default class ClassComponentLab extends Component {
           />
           <Text>{this.state.selectedUser}</Text>
           <Button
-            title="next"
+            title="Next"
             onPress={() => {
               this.state.selectedUser < this.state.candidates.length - 1
                 ? this.setState({ selectedUser: this.state.selectedUser + 1 })
@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontWeight: "bold",
     fontSize: 18,
+    marginVertical: 5,
   },
   listView: {
     padding: 10,
