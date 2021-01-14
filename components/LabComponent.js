@@ -81,7 +81,7 @@ export default class ClassComponentLab extends Component {
                 : null;
             }}
           />
-          <Text>{this.state.selectedUser}</Text>
+          <Text>{this.state.selectedUser + 1}</Text>
           <Button
             title="Next"
             onPress={() => {

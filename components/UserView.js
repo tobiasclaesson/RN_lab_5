@@ -13,6 +13,19 @@ export default class UserView extends Component {
     };
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("returning " + (nextProps.user != this.props.user));
+
+    if (
+      nextProps.user.name === this.props.user.name &&
+      nextState.user.name === this.state.user.name
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.user.name != this.props.user.name) {
       this.fetchUserWithId(this.props.user.id);
